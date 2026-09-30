@@ -232,3 +232,34 @@ export function store() {
     <text x="276" y="150" font-family="Fredoka, Arial" font-weight="600" font-size="13" text-anchor="middle" fill="${INK}">OPEN</text>
   </svg>`;
 }
+
+/* ---------------- Utah scenery for the road trip ---------------- */
+export function mountains() {
+  return `<svg class="ill-mountains" viewBox="0 0 2400 300" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 300V190l160-120 110 80 170-140 150 110 120-70 200 150 160-110 190 130 150-90 170 120 160-150 170 120 150-60 190 110 150-90V300z" fill="#ffd9e2" ${s(4)}/>
+    <path d="M430 30l-60 50 30 6 30-24 34 22 26-6zM1690 60l-50 44 26 4 26-18 30 18 20-4z" fill="#fff" ${s(3)}/>
+    <path d="M0 300V240l220-70 180 60 260-90 200 80 230-60 240 90 200-70 260 70 220-50 190 60 200-40V300z" fill="#ffc4d3" ${s(4)}/>
+  </svg>`;
+}
+export function cloudShape(w = 220) {
+  return `<svg class="ill-cloud" viewBox="0 0 220 90" style="width:${w}px" aria-hidden="true">
+    <path d="M30 80c-20 0-26-26-8-34-2-22 24-32 38-18 8-24 44-28 56-4 18-12 44-2 42 20 22 2 26 36 2 36z" fill="#fff" ${s(4)}/>
+  </svg>`;
+}
+export function sun() {
+  return `<svg class="ill-sun" viewBox="0 0 160 160" aria-hidden="true">
+    <g class="sun-rays" ${s(5)}>${Array.from({ length: 12 }, (_, i) => { const a = (i / 12) * Math.PI * 2; return `<path d="M${80 + Math.cos(a) * 52} ${80 + Math.sin(a) * 52}L${80 + Math.cos(a) * 70} ${80 + Math.sin(a) * 70}"/>`; }).join('')}</g>
+    <circle cx="80" cy="80" r="40" fill="#ffd66b" ${s(5)}/>
+  </svg>`;
+}
+export function roadSign(text) {
+  return `<svg class="ill-sign" viewBox="0 0 170 220" aria-hidden="true">
+    <path d="M80 90v126" ${s(8)}/>
+    <rect x="10" y="14" width="150" height="80" rx="12" fill="#3c8f5a" ${s(5)}/>
+    <rect x="18" y="22" width="134" height="64" rx="8" fill="none" stroke="#fff" stroke-width="3"/>
+    <text x="85" y="62" font-family="Fredoka, Arial" font-weight="700" font-size="24" text-anchor="middle" fill="#fff">${text}</text>
+  </svg>`;
+}
+export function steam() {
+  return `<svg class="ill-steam" viewBox="0 0 120 120" aria-hidden="true">${[20, 60, 100].map((x, i) => `<path class="steam-${i}" d="M${x} 110c-14-16 14-26 0-44s14-28 0-44" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".85"/>`).join('')}</svg>`;
+}

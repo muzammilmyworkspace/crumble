@@ -71,6 +71,12 @@ export function initKitchen() {
   tl.fromTo(flour, { rotate: 0 }, { rotate: 58, transformOrigin: '90% 100%', duration: 0.8, ease: 'power2.out', immediateRender: false }, 0.6)
     .to(flour, { rotate: 0, duration: 0.6, ease: 'power2.in' }, 2.6);
   arc(flourDots, top(flour, 0.9), 1.0, 1.8);
+  // puff of flour when it lands
+  const puff = document.createElement('i');
+  Object.assign(puff.style, { width: '140px', height: '80px', borderRadius: '50%', background: 'radial-gradient(closest-side, rgba(255,250,240,.95), rgba(255,250,240,0))' });
+  pour.appendChild(puff);
+  tl.fromTo(puff, { x: () => target().x - 70, y: () => target().y - 40, scale: 0.2, autoAlpha: 0 }, { scale: 1.6, autoAlpha: 1, duration: 0.8, ease: 'power2.out', immediateRender: false }, 2.0)
+    .to(puff, { autoAlpha: 0, y: '-=40', duration: 1 }, 2.8);
   const at = (el) => () => { const o = rect(el); return { x: o.x, y: o.y }; };
   const into = (el, dy = 20) => () => { const tg = target(), o = rect(el); return { x: tg.x - o.w * 0.5, y: tg.y - dy }; };
   flight(butter, at(butter), into(butter), 2.4, 1.2, { lift: 140, spin: -90, own: true, hide: false });
@@ -139,6 +145,7 @@ export function initKitchen() {
     .fromTo($$('i', heat), { opacity: 0, scaleY: 0.4 }, { opacity: 0.9, scaleY: 1, duration: 1, stagger: 0.1, immediateRender: false }, 31.4)
     .to($$('i', heat), { opacity: 0, duration: 0.6 }, 37)
     .to(glow, { opacity: 0.25, duration: 0.8 }, 37)
+    .fromTo($('.oven-steam', bk), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, immediateRender: false }, 36.8)
     .fromTo(timer, { scale: 1 }, { keyframes: { scale: [1, 1.25, 1] }, duration: 0.6, immediateRender: false }, 36.6)
     .fromTo(head, { rotate: 0 }, { keyframes: { rotate: [0, -10, -10, 0] }, duration: 6, immediateRender: false }, 30.5);
 
@@ -189,6 +196,9 @@ export function initKitchen() {
 
   scrubbed(root, tl, { scrub: 0.8 });
 
+  // idle life: breathing chef, steaming oven, flour puff
+  gsap.to($('.chef-body', chef), { scaleY: 1.015, transformOrigin: '50% 100%', duration: 1.6, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+  $$('.ill-steam path', root).forEach((p, i) => gsap.fromTo(p, { y: 10, opacity: 0 }, { y: -30, opacity: 0.9, duration: 1.8, repeat: -1, delay: i * 0.5, ease: 'sine.inOut', yoyo: true }));
   // idle life: blinking chef
   gsap.to($('.chef-eyes', chef), { scaleY: 0.1, transformOrigin: '50% 50%', duration: 0.1, repeat: -1, yoyo: true, repeatDelay: 2.6 });
 }

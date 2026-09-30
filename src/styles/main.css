@@ -95,7 +95,7 @@ ol, ul { list-style: none; }
 }
 
 /* ---------------- hero ---------------- */
-.hero { position: relative; height: 210vh; background: var(--pink); }
+.hero { position: relative; height: 170vh; background: var(--pink); }
 .hero-pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
 .hero-3d { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-fallback { position: absolute; left: 50%; top: 50%; width: min(56vh, 70vw); translate: -50% -50%; display: none; }
@@ -117,6 +117,17 @@ ol, ul { list-style: none; }
 .story-head { position: absolute; left: var(--pad); top: 13vh; z-index: 2; }
 .story-head .title { margin-top: 1.2rem; }
 .story-road { position: absolute; inset: 0; }
+.story-sky { position: absolute; inset: 0; pointer-events: none; }
+.sky-sun { position: absolute; right: 12vw; top: 12vh; width: 14rem; }
+.sky-sun svg { width: 100%; }
+.sky-clouds { position: absolute; inset: 0; }
+.sky-clouds .ill-cloud { position: absolute; }
+.sky-mountains { position: absolute; left: 0; bottom: 12vh; width: 300vw; height: 26vh; will-change: transform; }
+.sky-mountains svg { width: 100%; height: 100%; }
+.road-signs { position: absolute; left: 0; bottom: 12vh; width: 400vw; height: 22vh; will-change: transform; pointer-events: none; }
+.road-signs .sign { position: absolute; bottom: 0; width: 13rem; }
+.road-signs .sign:nth-child(1) { left: 120vw; } .road-signs .sign:nth-child(2) { left: 210vw; } .road-signs .sign:nth-child(3) { left: 300vw; }
+.oven-steam { position: absolute; left: 30%; top: -24%; width: 40%; opacity: 0; pointer-events: none; }
 .story-track { position: absolute; left: 0; bottom: 38vh; display: flex; align-items: flex-end; gap: 6rem; padding-left: 100vw; will-change: transform; }
 .milestone {
   flex: none; width: 34rem; padding: 2.8rem; border: 3px solid var(--ink); border-radius: 2.4rem; background: var(--white);
@@ -279,11 +290,14 @@ ol, ul { list-style: none; }
   .st-copy { left: var(--pad); right: var(--pad); width: auto; top: 22vh; }
   .st-copy h3 { font-size: 4rem; }
   .chef { width: 17rem; left: 2vw; }
-  .p-bowl { left: 44vw; width: 18rem; } .p-flour { left: 30vw; width: 8rem; } .p-sugar, .p-chipbag { display: none; } .p-butter { left: 72vw; width: 9rem; } .p-egg { left: 64vw; width: 4rem; }
-  .p-mixer { left: 44vw; width: 22rem; } .p-tray { left: 30vw; width: 34rem; } .balls { left: 30vw; width: 34rem; }
-  .p-oven { left: 40vw; width: 26rem; } .timer { left: var(--pad); bottom: 48%; font-size: 4rem; }
-  .frost-cookie { left: 44vw; width: 24rem; } .p-piping { left: 56vw; width: 7rem; }
-  .p-box { left: 30vw; width: 34rem; }
+  .p-bowl { left: auto; right: 4vw; width: 19rem; } .p-flour { left: 42vw; width: 8rem; } .p-sugar, .p-chipbag, .p-butter { display: none; } .p-egg { left: 88vw; width: 4rem; }
+  .p-mixer { left: auto; right: 2vw; width: 21rem; } .p-tray { left: auto; right: 2vw; width: 26rem; } .balls { left: auto; right: 2vw; width: 26rem; }
+  .balls canvas { width: 5rem; height: 5rem; }
+  .p-oven { left: auto; right: 3vw; width: 22rem; } .timer { left: var(--pad); bottom: 50%; font-size: 3.6rem; }
+  .frost-cookie { left: auto; right: 4vw; width: 21rem; } .p-piping { left: 70vw; width: 6rem; }
+  .p-box { left: auto; right: 2vw; width: 26rem; }
+  .box-lid span { font-size: 3rem; }
+  .sky-sun { width: 8rem; right: 6vw; } .road-signs .sign { width: 8rem; }
   .steps li { font-size: 0; padding: .6rem; } .steps li b { font-size: 1.2rem; margin: 0; }
   .menu-grid { grid-template-columns: 1fr; }
   .box3d { --w: 34rem; --d: 11rem; --h: 4rem; }

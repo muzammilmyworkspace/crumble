@@ -1,6 +1,6 @@
 import { gsap, $, $$, scrubbed, isMobile } from '../core.js';
 import { cookieURL, FLAVORS } from '../art/cookie.js';
-import { car, store } from '../art/illustrations.js';
+import { car, store, mountains, sun, cloudShape, roadSign } from '../art/illustrations.js';
 
 /* ================= HERO: 3D cookie that breaks apart ================= */
 export async function initHero() {
@@ -41,7 +41,7 @@ export async function initHero() {
     tl.fromTo(S, { tilt: 0.95, spin: 0, y: 0 }, { tilt: 0.25, spin: Math.PI * 0.6, y: 0.1, duration: 0.45, ease: 'power1.inOut', immediateRender: false }, 0)
       .fromTo(S, { break: 0 }, { break: 1, duration: 0.45, ease: 'power2.in', immediateRender: false }, 0.45)
       .fromTo(S, { zoom: isMobile() ? 0.9 : 1 }, { zoom: 1.1, duration: 0.45, immediateRender: false }, 0.45)
-      .fromTo(S, { fade: 1 }, { fade: 0, duration: 0.1, immediateRender: false }, 0.84);
+      .fromTo(S, { fade: 1 }, { fade: 0, duration: 0.08, immediateRender: false }, 0.92);
   }
   scrubbed(root, tl);
   return play;
@@ -52,6 +52,15 @@ export function initStory() {
   const root = $('.story');
   $('.story-car', root).innerHTML = car();
   $('[data-art="store"]', root).innerHTML = store();
+  $('[data-art="mountains"]', root).innerHTML = mountains();
+  $('[data-art="sun"]', root).innerHTML = sun();
+  $$('.sign', root).forEach((s) => (s.innerHTML = roadSign(s.dataset.sign)));
+  const clouds = $('.sky-clouds', root);
+  [[8, 14, 200], [34, 8, 150], [58, 20, 240], [82, 10, 170], [120, 16, 210], [150, 6, 160]].forEach(([x, y, w]) => {
+    clouds.insertAdjacentHTML('beforeend', cloudShape(w));
+    Object.assign(clouds.lastElementChild.style, { left: `${x}vw`, top: `${y}vh` });
+  });
+  gsap.to($('.sun-rays', root), { rotate: 360, transformOrigin: '50% 50%', duration: 30, repeat: -1, ease: 'none' });
   const track = $('.story-track', root), carEl = $('.story-car', root), dash = $('.road-dash', root);
   const wheels = $$('.car-wheel', root);
   const cards = $$('.milestone', root);
@@ -67,6 +76,9 @@ export function initStory() {
   tl.fromTo(track, { x: () => -innerWidth * 0.45 }, { x: () => -(track.scrollWidth - innerWidth * 0.55), duration: 1 }, 0.02)
     .fromTo(dash, { x: 0 }, { x: () => -innerWidth * 2.4, duration: 1 }, 0.04)
     .fromTo(wheels, { rotate: 0 }, { rotate: 360 * 14, duration: 1 }, 0.04)
+    .fromTo($('.sky-mountains', root), { x: 0 }, { x: () => -innerWidth * 1.4, duration: 1 }, 0.02)
+    .fromTo($('.road-signs', root), { x: 0 }, { x: () => -innerWidth * 3.4, duration: 1 }, 0.02)
+    .fromTo(clouds, { x: 0 }, { x: () => -innerWidth * 0.5, duration: 1 }, 0.02)
     .fromTo(carEl, { x: () => -innerWidth * 0.3 }, { x: 0, duration: 0.08, ease: 'power2.out' }, 0)
     .to(carEl, { x: innerWidth * 0.08, duration: 0.8 }, 0.18)
     .to(carEl, { x: innerWidth * 1.1, duration: 0.14, ease: 'power2.in' }, 0.92)
