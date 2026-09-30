@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crumbl | The Journey of a Cookie (Concept)</title>
+  <meta name="description" content="A scroll-driven story of how a Crumbl cookie is dreamt up, mixed, baked, frosted and boxed. Website concept." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#ffb9cd" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ============ LOADER ============ -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader-cookie"><canvas class="loader-canvas" width="520" height="520"></canvas></div>
+    <p class="loader-count"><span data-count>0</span>%</p>
+    <p class="loader-line">preheating the oven…</p>
+  </div>
+
+  <!-- ============ CURSOR + CRUMBS ============ -->
+  <div class="cursor" aria-hidden="true"><div class="cursor-cookie"></div><span class="cursor-label">yum</span></div>
+  <canvas class="crumbs-fx" aria-hidden="true"></canvas>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <button class="header-menu" aria-label="Menu"><span></span><span></span><span></span> Menu</button>
+    <a class="logo" href="#top" aria-label="Crumbl home">crumbl</a>
+    <a class="btn btn-ink header-cta" href="#find" data-cursor="order">Order Now</a>
+  </header>
+  <p class="concept-tag">Website concept · not affiliated</p>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" data-bg="pink">
+      <div class="hero-pin">
+        <canvas class="hero-3d" aria-hidden="true"></canvas>
+        <img class="hero-fallback" alt="" />
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh out of the oven · every week</p>
+          <h1 class="hero-title"><span class="line">The journey</span><span class="line">of a <em>cookie</em></span></h1>
+          <p class="hero-sub">From two cousins with one big dream to a pink box in your hands. Scroll to watch it happen.</p>
+        </div>
+        <div class="hero-scroll"><span>scroll to bake</span><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="story" data-bg="cream">
+      <div class="story-pin">
+        <div class="story-head">
+          <p class="eyebrow">Our story</p>
+          <h2 class="title">It all started with<br /><span class="scribble">one big dream</span></h2>
+        </div>
+        <div class="story-road">
+          <div class="story-track">
+            <article class="milestone"><span class="ms-year">2017</span><h3>Two cousins, one quest</h3><p>Jason McGowan and Sawyer Hemsley teamed up to bake the perfect chocolate chip cookie.</p></article>
+            <article class="milestone"><span class="ms-year">The recipe</span><h3>Milk Chocolate Chip is born</h3><p>After batch after batch, the recipe that started it all finally came out of the oven.</p></article>
+            <article class="milestone ms-store"><span class="ms-year">Logan, Utah</span><h3>The first Crumbl opens</h3><p>An open-concept kitchen, so every guest can watch cookies get mixed, balled and baked.</p><div class="ms-art" data-art="store"></div></article>
+            <article class="milestone"><span class="ms-year">2018</span><h3>The iconic pink box</h3><p>Designed so every cookie sits side by side, the 4-pack box became impossible to miss.</p></article>
+            <article class="milestone"><span class="ms-year">Every Monday</span><h3>Six flavors, every week</h3><p>A rotating menu that keeps the whole country guessing what’s next.</p></article>
+            <article class="milestone"><span class="ms-year">Today</span><h3>1,000+ bakeries</h3><p>Still on the same mission: bringing friends and family together over a box of the best cookies in the world.</p></article>
+          </div>
+          <div class="road"><div class="road-dash"></div></div>
+          <div class="story-car" data-art="car"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KITCHEN JOURNEY ============ -->
+    <section class="kitchen" id="journey" data-bg="pink">
+      <div class="kitchen-pin">
+        <div class="kitchen-hud">
+          <p class="eyebrow">The journey</p>
+          <ol class="steps">
+            <li class="is-on"><b>01</b>Gather</li><li><b>02</b>Mix</li><li><b>03</b>Scoop</li><li><b>04</b>Bake</li><li><b>05</b>Frost</li><li><b>06</b>Box</li>
+          </ol>
+          <div class="progress"><i></i></div>
+        </div>
+
+        <div class="kitchen-world">
+          <div class="wall"></div>
+          <div class="counter"></div>
+
+          <!-- 01 gather -->
+          <div class="station st-gather">
+            <div class="st-copy"><span class="st-num">01</span><h3>Gather the goods</h3><p>Real butter, brown sugar, flour and a mountain of milk chocolate. Measured fresh, every single morning.</p></div>
+            <div class="prop p-flour" data-art="flourBag"></div>
+            <div class="prop p-sugar" data-art="sugarJar"></div>
+            <div class="prop p-butter" data-art="butter"></div>
+            <div class="prop p-egg" data-art="egg"></div>
+            <div class="prop p-chipbag" data-art="chipBag"></div>
+            <div class="prop p-bowl" data-art="bowl"></div>
+            <div class="pour"></div>
+          </div>
+
+          <!-- 02 mix -->
+          <div class="station st-mix">
+            <div class="st-copy"><span class="st-num">02</span><h3>Mix it up</h3><p>Creamed until fluffy, then folded until every scoop has its fair share of chocolate.</p></div>
+            <div class="prop p-mixer" data-art="mixer"></div>
+          </div>
+
+          <!-- 03 scoop -->
+          <div class="station st-scoop">
+            <div class="st-copy"><span class="st-num">03</span><h3>Scoop &amp; ball</h3><p>Each cookie is weighed and hand-balled, big enough to share (you won’t want to).</p></div>
+            <div class="prop p-tray" data-art="tray"></div>
+            <div class="balls"></div>
+          </div>
+
+          <!-- 04 bake -->
+          <div class="station st-bake">
+            <div class="st-copy"><span class="st-num">04</span><h3>Into the oven</h3><p>Golden edges, soft centre. Our bakers watch every tray until it’s just right.</p></div>
+            <div class="prop p-oven" data-art="oven"><div class="oven-cookies"></div><div class="heat"></div></div>
+            <div class="timer"><span data-timer>00:00</span></div>
+          </div>
+
+          <!-- 05 frost -->
+          <div class="station st-frost">
+            <div class="st-copy"><span class="st-num">05</span><h3>The signature swoop</h3><p>A silky pink swirl of real almond frosting. Some cookies are simply famous.</p></div>
+            <div class="frost-cookie"><canvas class="frost-base" width="600" height="600"></canvas><canvas class="frost-top" width="600" height="600"></canvas></div>
+            <div class="prop p-piping" data-art="pipingBag"></div>
+          </div>
+
+          <!-- 06 box -->
+          <div class="station st-box">
+            <div class="st-copy"><span class="st-num">06</span><h3>Into the pink box</h3><p>Four cookies, side by side, still warm. The best part of anyone’s week.</p></div>
+            <div class="prop p-box" data-art="box"><div class="box-cookies"></div><div class="box-lid"><span>crumbl</span></div></div>
+          </div>
+
+          <div class="chef" data-art="chef"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WEEKLY MENU ============ -->
+    <section class="menu" id="menu" data-bg="white">
+      <div class="menu-head">
+        <p class="eyebrow">Sep 27 – Oct 3</p>
+        <h2 class="title">This week’s <span class="scribble">six</span></h2>
+        <p class="lead">New and returning flavors drop every Monday. Try them before they’re gone.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="flavor" data-flavor="smores" data-cursor="order"><div class="flavor-cookie"></div><span class="tag">This week only</span><h3>Midnight S'mores</h3><p>Chocolate cookie, milk chocolate chips, melty marshmallow and graham crumbs.</p></article>
+        <article class="flavor" data-flavor="snickerdoodle" data-cursor="order"><div class="flavor-cookie"></div><span class="tag">This week only</span><h3>Snickerdoodle Cupcake</h3><p>Warm cinnamon sugar cookie, cream cheese frosting and one more dash of cinnamon.</p></article>
+        <article class="flavor" data-flavor="blueberry" data-cursor="order"><div class="flavor-cookie"></div><span class="tag">This week only</span><h3>Blueberry Muffin</h3><p>Blueberry cookie, buttery glaze and a crunch of muffin streusel.</p></article>
+        <article class="flavor" data-flavor="strawberry" data-cursor="order"><div class="flavor-cookie"></div><span class="tag">This week only</span><h3>Strawberries 'n' Cream</h3><p>Vanilla cake cookie, whipped cream, strawberry jam and fresh slices.</p></article>
+        <article class="flavor" data-flavor="peanutButter" data-cursor="order"><div class="flavor-cookie"></div><span class="tag">This week only</span><h3>PB Milkshake</h3><p>Chilled peanut butter cookie, peanut butter buttercream and whipped cream.</p></article>
+        <article class="flavor" data-flavor="pinkSugar" data-cursor="order"><div class="flavor-cookie"></div><span class="tag tag-classic">Always here</span><h3>Pink Sugar</h3><p>Almond sugar cookie with a silky pink swoop of real almond frosting.</p></article>
+      </div>
+    </section>
+
+    <!-- ============ PINK BOX 3D ============ -->
+    <section class="boxreveal" data-bg="pink">
+      <div class="boxreveal-pin">
+        <h2 class="title boxreveal-title">Designed so every cookie<br />sits <span class="scribble">side by side</span></h2>
+        <div class="box3d">
+          <div class="b3-base"><i class="f bottom"></i><i class="f front"></i><i class="f back"></i><i class="f left"></i><i class="f right"></i>
+            <div class="b3-cookies"></div></div>
+          <div class="b3-lid"><i class="f top"><span>crumbl</span></i><i class="f under"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TODAY ============ -->
+    <section class="today" data-bg="ink">
+      <p class="eyebrow">Crumbl today</p>
+      <div class="stats">
+        <div class="stat"><b data-to="830" data-suffix="K">0</b><span>desserts sold every day</span></div>
+        <div class="stat"><b data-to="1000" data-suffix="+">0</b><span>bakeries and counting</span></div>
+        <div class="stat"><b data-to="24" data-suffix="K">0</b><span>bakers, managers and crew</span></div>
+      </div>
+      <div class="reviews">
+        <div class="reviews-track">
+          <blockquote>“Crumbl has the best cookies! My favorite dessert.”</blockquote>
+          <blockquote>“Amazing cookies and the employees are so nice.”</blockquote>
+          <blockquote>“New flavors every time I visit. Honestly they’re all to die for.”</blockquote>
+          <blockquote>“The pink box is the best part of my Friday.”</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FIND / CTA ============ -->
+    <section class="find" id="find" data-bg="pink">
+      <div class="find-inner">
+        <h2 class="title">Your next box is<br /><span class="scribble">one scroll away</span></h2>
+        <p class="lead">Order for pickup, delivery or catering at a Crumbl near you.</p>
+        <div class="find-actions">
+          <a class="btn btn-ink" href="#" data-cursor="order">Find a store</a>
+          <a class="btn btn-ghost" href="#menu">See this week’s flavors</a>
+        </div>
+      </div>
+      <div class="find-cookies" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-word"><canvas class="footer-crumbs"></canvas><p class="footer-logo">crumbl</p></div>
+    <div class="footer-bot">
+      <span>Concept website built as a pitch. Crumbl is a trademark of its owner.</span>
+      <span>Move your mouse over the logo ↑</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

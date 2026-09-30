@@ -1,6 +1,0 @@
-<!doctype html><body style="margin:0;background:#ffb9cd;display:flex;flex-wrap:wrap;gap:10px;padding:10px">
-<script type="module">
-import { cookieCanvas, FLAVORS } from '/src/art/cookie.js';
-const list=[['chocolateChip',{}],['pinkSugar',{}],['smores',{}],['snickerdoodle',{}],['blueberry',{}],['strawberry',{}],['peanutButter',{}],['raw',{}],['chocolateChip',{bake:0.3}],['chocolateChip',{bite:{angle:-0.7}}],['chocolateChip',{outline:5}]];
-list.forEach(([k,o],i)=>{ const c=cookieCanvas(300,{...FLAVORS[k],seed:i+3,...o}); document.body.appendChild(c); });
-</script></body>
